@@ -38,7 +38,6 @@ public class JobResponseDTO
     public int getJobId() {
         return jobId;
     }
-
     public void setJobId(int jobId) {
         this.jobId = jobId;
     }

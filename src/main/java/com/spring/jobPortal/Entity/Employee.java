@@ -41,8 +41,6 @@ public class Employee
     @OneToMany(mappedBy =  "reviewedBy")
     private List<Application> application ;
 
-//    @OneToMany(mappedBy = "createdBy")
-//    private List<Student> createdStudents;
 
 
 }

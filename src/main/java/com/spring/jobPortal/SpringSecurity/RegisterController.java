@@ -26,7 +26,6 @@ public class RegisterController {
         this.Erepo = Erepo;
         this.Srepo = Srepo;
     }
-
     @PostMapping("/employee")
     @Transactional
     public String registerEmployee(@RequestBody @Valid EmployeeRegisterDTO request) {

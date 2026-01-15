@@ -22,7 +22,6 @@ public class ApplicationGetDTO
     public String getFinalResult() {
         return finalResult;
     }
-
     public int getApplicationId() {
         return applicationId;
     }

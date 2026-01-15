@@ -9,7 +9,6 @@ public class ApplicationStatusDTO
     public ApplicationStatus getChangedStatus() {
         return changedStatus;
     }
-
     public void setChangedStatus(ApplicationStatus changedStatus) {
         this.changedStatus = changedStatus;
     }

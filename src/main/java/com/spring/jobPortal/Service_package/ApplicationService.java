@@ -57,7 +57,6 @@ public class ApplicationService
         if (status.getFinalResult() == ApplicationStatus.PENDING) {
             throw new IllegalArgumentException("Admin cannot set status back to PENDING");
         }
-
         app.setFinalResult(status.getFinalResult());
         app.setOverridden(true);
         applicationRepository.save(app);

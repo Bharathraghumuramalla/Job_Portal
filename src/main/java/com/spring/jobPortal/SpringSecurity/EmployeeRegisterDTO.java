@@ -38,4 +38,5 @@ public class EmployeeRegisterDTO
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

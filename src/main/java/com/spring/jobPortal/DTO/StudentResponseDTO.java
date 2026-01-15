@@ -25,7 +25,6 @@ public class StudentResponseDTO
     public void setAge(int age) {
         this.age = age;
     }
-
     public void setYearOfPassing(int yearOfPassing) {
         this.yearOfPassing = yearOfPassing;
     }

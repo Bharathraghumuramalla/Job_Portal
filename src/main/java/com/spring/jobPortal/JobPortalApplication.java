@@ -10,5 +10,4 @@ public class JobPortalApplication {
     {
 		SpringApplication.run(JobPortalApplication.class, args);
 	}
-
 }

@@ -63,5 +63,4 @@ public class AdminController
     {
         return ResponseEntity.ok(jobService.getJobsPostedByEmp(employeeId, pageNo, pageSize, sortBy, sortOrder));
     }
-
 }

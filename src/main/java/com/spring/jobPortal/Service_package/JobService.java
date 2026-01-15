@@ -188,7 +188,6 @@ public class JobService
     }
     public Page<JobResponseDTO> getJobsPostedByEmp(int id,int pageNo, int pageSize, String sortBy, String sortOrder)
     {
-
         Set<String> sortFields = Set.of("jobId","location", "experience");
         if(!sortFields.contains(sortBy))
         {

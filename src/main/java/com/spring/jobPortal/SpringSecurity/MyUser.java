@@ -16,11 +16,10 @@ public class MyUser {
     @Column(nullable = false)
     private String password;
 
-    // MUST be ROLE_XXXX
+
     @Column(nullable = false)
     private String role;
 
-    // getters & setters
     public int getId() { return id; }
     public String getUserName() { return userName; }
     public String getPassword() { return password; }

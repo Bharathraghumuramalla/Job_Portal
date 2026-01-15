@@ -62,7 +62,6 @@ public class EmployeeController
         applicationService.UpdateApplication(uad, applicationId);
         return ResponseEntity.status(HttpStatus.OK).body("updated successfully");
     }
-
     @PreAuthorize("hasRole('EMPLOYEE')")
     @GetMapping("/employee/applications")
     public ResponseEntity<Page<ApplicationGetDTO>> getAllApplications(@RequestParam(defaultValue = "1") int pageNo,

@@ -1,7 +1,6 @@
 package com.spring.jobPortal.SpringSecurity;
 
-import com.spring.jobPortal.SpringSecurity.MyUser;
-import com.spring.jobPortal.SpringSecurity.MyUserRepository;
+
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;

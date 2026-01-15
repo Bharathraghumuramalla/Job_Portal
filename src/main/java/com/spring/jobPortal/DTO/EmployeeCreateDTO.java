@@ -13,15 +13,12 @@ public class EmployeeCreateDTO
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
     }
-
     public void setAge(int age) {
         this.age = age;
     }
-
     public String getEmployeeName() {
         return employeeName;
     }
-
     public int getAge() {
         return age;
     }

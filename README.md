@@ -1,6 +1,7 @@
 # Job_Portal
 This project is a role-based job portal backend application that manages the interaction between employees (recruiters) and students (job seekers) throughout the hiring process.
 
+
  #Overview
 
 The Job Portal Management System is a backend-focused application designed to manage job postings and applications with role-based access control.

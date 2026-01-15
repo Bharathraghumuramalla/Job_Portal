@@ -9,11 +9,9 @@ public class EmployeeResponseDTO
     public int getEmployeeId() {
         return employeeId;
     }
-
     public int getAge() {
         return age;
     }
-
     public String getEmployeeName() {
         return employeeName;
     }

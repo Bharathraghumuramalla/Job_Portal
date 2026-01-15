@@ -18,7 +18,4 @@ public interface JobRepository extends JpaRepository<Job, Integer>
 
     Page<Job> findByEmployee_EmployeeId(int id,  Pageable pageable);
 
-
-
-
 }

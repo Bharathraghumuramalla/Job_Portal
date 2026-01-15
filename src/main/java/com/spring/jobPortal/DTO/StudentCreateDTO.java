@@ -48,7 +48,6 @@ public class StudentCreateDTO
     public void setYearOfPassing(int yearOfPassing) {
         this.yearOfPassing = yearOfPassing;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }

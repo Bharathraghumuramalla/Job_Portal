@@ -19,7 +19,6 @@ public class GlobalExceptionHandler
     {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
     }
-
     @ExceptionHandler(BadRequestException.class)
     public ResponseEntity<?> HandleIllegalArgumentException(BadRequestException e)
     {

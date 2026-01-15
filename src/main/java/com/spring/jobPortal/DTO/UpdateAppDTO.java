@@ -10,7 +10,6 @@ public class UpdateAppDTO
     public ApplicationStatus getFinalResult() {
         return finalResult;
     }
-
     public void setFinalResult(ApplicationStatus finalResult) {
         this.finalResult = finalResult;
     }
