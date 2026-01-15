@@ -1,87 +1,78 @@
-# Job_Portal
-This project is a role-based job portal backend application that manages the interaction between employees (recruiters) and students (job seekers) throughout the hiring process.
+# Job Portal
+
+This project is a role-based job portal backend application that manages the interaction between **Employees** (recruiters) and **Students** (job seekers) throughout the hiring process.
+
+## Overview
+
+The Job Portal Management System is a backend-focused application designed to manage job postings and applications with role-based access control. It allows Employees (HR) to post and manage jobs, while Applicants (Students) can browse and apply for jobs. 
+
+This project demonstrates backend engineering fundamentals such as:
+* RESTful API design
+* Database relationships
+* Authentication and Authorization using Spring Boot
+
+## Tech Stack
+
+* **Backend:** Java, Spring Boot
+* **Security:** Spring Security (JWT / Basic Authentication)
+* **Database:** MySQL
+* **ORM:** JPA / Hibernate
+* **Build Tool:** Maven
+* **API Testing:** Postman
+
+## Features
+
+* **User Authentication:** Secure login and registration.
+* **RBAC:** Role-based access control (Employee, Applicant, Admin).
+* **Job Management:** Create, update, and delete job postings.
+* **Application Tracking:** Monitor application status in real-time.
+* **Database Design:** Optimized schema with proper entity relationships.
+
+## Database Design
 
 
- #Overview
 
-The Job Portal Management System is a backend-focused application designed to manage job postings and applications with role-based access control.
-It allows Employees (HR) to post and manage jobs, while Applicants (Students) can browse and apply for jobs.
-This project demonstrates backend engineering fundamentals such as RESTful API design, database relationships, authentication, and authorization using Spring Boot
+### Entities
 
-#Tech Stack
+* **User:** Represents both Employees and Applicants.
+    * *Fields:* `id`, `username`, `password`, `role`
+* **Job:** Created by an Employee.
+    * *Relationship:* One Employee can post multiple Jobs.
+* **Application:** Acts as a bridge between Job and Applicant.
+    * *Details:* Stores status (Pending/Accepted/Rejected) and applied date.
 
-Backend: Java, Spring Boot
-Security: Spring Security (JWT / Basic Authentication)
-Database: MySQL
-ORM: JPA / Hibernate
-Build Tool: Maven
-API Testing: Postman
+---
 
-#Features
+## 🔐 Role-Based Access Control (RBAC)
 
-User authentication and authorization
-Role-based access control (Employee, Applicant)
-Job posting and management
-Job application tracking with status
-Secure REST APIs
-Clean database design with proper relationships
+### Permissions
 
-#Database Design
+| Role           | Allowed Actions |
 
-Entities
+| **EMPLOYEE**   | Create, update, delete jobs, view applicants |
+| **APPLICANT**  | View jobs, apply for jobs |
+| **BOTH**       | Login and access profile endpoints |
 
-User
-Represents both Employees and Applicants
-Fields: id, username, password, role
+### Enforcement
+* Implemented using **Spring Security**.
+* Authorization handled via role checks (`hasRole`, `@PreAuthorize`).
+* Logged-in user details fetched from `SecurityContextHolder`.
 
-Job
-Created by an Employee
-One Employee can post multiple Jobs
+---
 
-Application
-Acts as a bridge between Job and Applicant
-Stores application-specific details such as status and applied date
+## 📑 API Endpoints
 
-#Role-Based Access Control
+### Student APIs
+* `GET /student/jobs` - View all jobs
+* `GET /student/job/location/{location}` - Filter by location
+* `POST /student/application` - Apply for a job
 
-Roles
-EMPLOYEE
-APPLICANT
+### Employee APIs
+* `POST /employee/jobs` - Post a new job
+* `PUT /employee/applications/{id}/review` - Update application status
+* `GET /employee/applications` - View all received applications
 
-Permissions
-
-Role	          Allowed Actions
-EMPLOYEE	     Create, update, delete jobs, view applicants
-APPLICANT	     View jobs, apply for jobs
-BOTH	         Login and access permitted endpoints
-
-
-#Enforcement
-
-Implemented using Spring Security
-Authorization handled via role checks (hasRole, @PreAuthorize)
-Logged-in user details fetched from SecurityContextHolder
-
-#API Endpoints
-
-Student APIs
-GET  /student/jobs
-GET  /student/job/location/{location}
-GET  /student/job/{jobId}
-POST /student/application
-
-Employee APIs
-POST /employee/jobs
-GET  /jobs/student/{studentId}
-GET  /students/job/{jobId}
-PUT  /employee/applications/{applicationId}/review
-GET  /employee/applications
-GET  /students
-GET  /employee/student/{studentId}
-
-Admin APIs
-GET   /admin/employees
-PUT   /admin/applications/{applicationId}/override
-PATCH /admin/student/{studentId}
-GET   /admin/employee/jobs/{employeeId}
-
+### Admin APIs
+* `GET /admin/employees` - List all employees
+* `PUT /admin/applications/{id}/override` - Admin status override
+* `PATCH /admin/student/{id}` - Update student record
